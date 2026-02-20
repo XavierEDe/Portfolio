@@ -1259,6 +1259,30 @@ footer {
   footer             { flex-direction: column; text-align: center; }
 }
 
+  /* Navbar: fully opaque so no content bleeds through the top gap */
+  nav {
+    background: var(--bg);
+    top: 0;
+  }
+
+  /* Mobile nav: also fully opaque, flush below navbar */
+  .mobile-nav {
+    display: flex;
+    transform: translateY(-110%);
+    background: var(--bg);
+    top: 70px;
+  }
+  .mobile-nav.open { transform: translateY(0); }
+
+  /* Hide scroll indicator on mobile — overlaps the CTA buttons 
+  .scroll-indicator { display: none; } */
+
+  /* Extra bottom padding so hero content isn't cramped */
+  #hero { padding-bottom: 4rem; }
+
+  section { padding: 5rem 5%; }
+  footer  { flex-direction: column; text-align: center; }
+
 @media (max-width: 600px) {
   .stats-grid    { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
