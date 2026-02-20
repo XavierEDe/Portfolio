@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Udoh, David Uduak — Front-End Developer</title>
+  <title>Udoh, David Uduak — Developer</title>
 
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23060810'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Syne,sans-serif' font-weight='700' font-size='42' fill='%2300E5FF'>D</text></svg>">
 
   <link rel="stylesheet" href="portfoliostyle.css">
 
@@ -116,7 +117,6 @@
       </div>
       <span>Scroll</span>
     </div>
-
   </section>
 
 
@@ -135,7 +135,6 @@
                 <img src="David_Pic.JPG" alt="David Uduak Udoh">
             <!--
               Replace with actual photo:
-              
             -->
             <div class="about-photo-placeholder">👨‍💻</div>
             <div class="about-photo-tag">Front-End Developer</div>
@@ -178,7 +177,6 @@
 
           <div class="about-cta reveal">
              <a href="DAVID_UDUAK_UDOH_Resume.pdf" target="_blank" download="DAVID_UDUAK_UDOH_Resume.pdf" class="btn-primary">⬇ Download CV</a>
-            <input type="file" id="cv-input" accept=".pdf" onchange="handleCVUpload(event)">
             <a href="#projects" class="btn-outline">View Projects →</a>
           </div>
 
@@ -197,7 +195,7 @@
       <div class="stat-card reveal reveal-delay-1"
            onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
         <div class="stat-icon">🗂️</div>
-        <div class="stat-count" data-target="24" data-suffix="+">0</div>
+        <div class="stat-count" data-target="12" data-suffix="+">0</div>
         <div class="stat-label">All Projects</div>
         <div class="stat-sublabel">Click to view portfolio →</div>
       </div>
@@ -205,7 +203,7 @@
       <div class="stat-card reveal reveal-delay-2"
            onclick="document.getElementById('certificates').scrollIntoView({behavior:'smooth'})">
         <div class="stat-icon">🏆</div>
-        <div class="stat-count" data-target="12" data-suffix="+">0</div>
+        <div class="stat-count" data-target="4" data-suffix="+">0</div>
         <div class="stat-label">Certificates</div>
         <div class="stat-sublabel">Click to view credentials →</div>
       </div>
@@ -236,23 +234,23 @@
         <!-- Project 1 -->
         <div class="project-card reveal">
           <div class="project-img">
-            <div class="project-img-placeholder">🌐</div>
+            <img src="farmfeeder.png" alt="Livestock Farm Feeding System">
             <div class="project-overlay">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">↗ Demo</a>
               <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
             </div>
           </div>
           <div class="project-body">
-            <div class="project-title">Smart Home Dashboard</div>
+            <div class="project-title">Automated  Time-based Livestock Farm Feeding and Security System</div>
             <p class="project-desc">
-              A real-time IoT dashboard built to monitor and control smart home devices.
-              Integrated with MQTT and WebSockets for live data streaming.
+              An automated, time-based IoT system built to manage livestock feeding and farm security, integrated with smart sensors and real-time monitoring for efficient operations and enhanced safety.
             </p>
             <div class="project-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag">MQTT</span>
-              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Arduino</span>
+              <span class="project-tag">Esp32</span>
+              <span class="project-tag">C++</span>
               <span class="project-tag">IoT</span>
+              <span class="project-tag">Circuit Design</span>
             </div>
             <div class="project-actions">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
@@ -265,28 +263,27 @@
         <!-- Project 2 -->
         <div class="project-card reveal reveal-delay-1">
           <div class="project-img" style="background:linear-gradient(135deg,#0d1b2a,#1a3a5c)">
-            <div class="project-img-placeholder">🔌</div>
+            <img src="myportfolio.png" alt="My portfolio">
             <div class="project-overlay">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">↗ Demo</a>
               <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
             </div>
           </div>
           <div class="project-body">
-            <div class="project-title">Network Monitor Pro</div>
+            <div class="project-title">My portfolio</div>
             <p class="project-desc">
-              A full-featured network topology visualizer and monitor with live traffic analytics,
-              alert system, and bandwidth tracking.
+              My personal portfolio website built with JavaScript, showcasing my projects, skills, and experience.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">React</span>
-              <span class="project-tag">Networking</span>
-              <span class="project-tag">D3.js</span>
+              <span class="project-tag">JavaScript</span> 
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">HTML</span>
+            <!--<span class="project-tag">D3.js</span>-->
             </div>
             <div class="project-actions">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
+              <a href="https://github.com/XavierEDe/Portfolio.git" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
+              <button class="btn-sm btn-sm-ghost" onclick="window.open('https://portfolio-roan-three-35.vercel.app/', '_blank')">Details</button>
             </div>
           </div>
         </div>
@@ -294,23 +291,22 @@
         <!-- Project 3 -->
         <div class="project-card reveal reveal-delay-2">
           <div class="project-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1060)">
-            <div class="project-img-placeholder">🤖</div>
+            <img src="phoenixapp1.png" alt="Phoenix Travel App">
             <div class="project-overlay">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">↗ Demo</a>
               <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
             </div>
           </div>
           <div class="project-body">
-            <div class="project-title">AI Crop Disease Detector</div>
+            <div class="project-title">Mobile Travel Services App UI/UX</div>
             <p class="project-desc">
-              A machine learning-powered web app that identifies crop diseases from images captured
-              by IoT field sensors. Helps farmers act faster.
+              A mobile app UI/UX design for a travel services platform, created using Figma. The design focuses on user-friendly navigation and an engaging interface to enhance the travel booking experience.
             </p>
             <div class="project-tags">
-              <span class="project-tag">TensorFlow</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">React</span>
-              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">UI/UX</span>
+              <span class="project-tag">Mobile Design</span>
+              <span class="project-tag">Design System</span>
             </div>
             <div class="project-actions">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
@@ -323,23 +319,21 @@
         <!-- Project 4 -->
         <div class="project-card reveal reveal-delay-3">
           <div class="project-img" style="background:linear-gradient(135deg,#0a1a0f,#0d3320)">
-            <div class="project-img-placeholder">📡</div>
+            <img src="agrochain.png" alt="AgroChain">
             <div class="project-overlay">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">↗ Demo</a>
               <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
             </div>
           </div>
           <div class="project-body">
-            <div class="project-title">LoRa Sensor Network</div>
+            <div class="project-title">AgroChain</div>
             <p class="project-desc">
-              Long-range wireless sensor network using LoRa modules and Raspberry Pi gateways.
-              Enables data collection in remote, off-grid areas.
+              A blockchain-based supply chain management system for agriculture, designed to enhance transparency and traceability from farm to table. The project includes a Figma prototype of the user interface for tracking produce and verifying authenticity.
             </p>
             <div class="project-tags">
-              <span class="project-tag">LoRa</span>
-              <span class="project-tag">Arduino</span>
-              <span class="project-tag">Raspberry Pi</span>
-              <span class="project-tag">Python</span>
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Blockchain</span>
+              <span class="project-tag">Sui</span>
             </div>
             <div class="project-actions">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
@@ -349,7 +343,7 @@
           </div>
         </div>
 
-        <!-- Project 5 -->
+        <!-- Project 5 
         <div class="project-card reveal reveal-delay-1">
           <div class="project-img" style="background:linear-gradient(135deg,#1a100a,#3a2010)">
             <div class="project-img-placeholder">🛒</div>
@@ -376,9 +370,9 @@
               <button class="btn-sm btn-sm-ghost">Details</button>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <!-- Project 6 -->
+        <!-- Project 6 
         <div class="project-card reveal reveal-delay-2">
           <div class="project-img" style="background:linear-gradient(135deg,#0a1520,#102840)">
             <div class="project-img-placeholder">🔐</div>
@@ -405,7 +399,7 @@
               <button class="btn-sm btn-sm-ghost">Details</button>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -425,19 +419,19 @@
       <div class="certs-grid">
 
         <!-- Certificate 1 -->
-        <div class="cert-card reveal">
+        <div class="cert-card reveal"> 
           <div class="cert-badge" style="background:linear-gradient(135deg,#0a2040,#003380)">
-            <span>🖥️</span>
             <div class="cert-badge-ribbon">CISCO</div>
+            <img src="cisco.png" alt="Cisco Badge" class="cert-badge-img">
           </div>
           <div class="cert-info">
-            <div class="cert-title">CCNA: Introduction to Networks</div>
+            <div class="cert-title">CyberOps Associate</div>
             <div class="cert-org">Cisco Networking Academy</div>
-            <div class="cert-year">2023</div>
+            <div class="cert-year">2024</div>
           </div>
         </div>
 
-        <!-- Certificate 2 -->
+        <!-- Certificate 2 
         <div class="cert-card reveal reveal-delay-1">
           <div class="cert-badge" style="background:linear-gradient(135deg,#2d0a3a,#5a0f7a)">
             <span>☁️</span>
@@ -448,22 +442,22 @@
             <div class="cert-org">Amazon Web Services</div>
             <div class="cert-year">2023</div>
           </div>
-        </div>
+        </div> -->
 
-        <!-- Certificate 3 -->
+        <!-- Certificate 2 -->
         <div class="cert-card reveal reveal-delay-2">
           <div class="cert-badge" style="background:linear-gradient(135deg,#1a0a00,#3a2000)">
-            <span>🤖</span>
-            <div class="cert-badge-ribbon">GOOGLE</div>
+            <img src="virtual-assistant-certificate.jpeg" alt="Alx Africa" class="cert-badge-img">
+            <div class="cert-badge-ribbon">Alx </div>
           </div>
           <div class="cert-info">
-            <div class="cert-title">Machine Learning Crash Course</div>
-            <div class="cert-org">Google Developers</div>
-            <div class="cert-year">2024</div>
+            <div class="cert-title">Alx Virtual Assistant</div>
+            <div class="cert-org">Alx Africa</div>
+            <div class="cert-year">2025</div>
           </div>
         </div>
 
-        <!-- Certificate 4 -->
+        <!-- Certificate 4
         <div class="cert-card reveal reveal-delay-3">
           <div class="cert-badge" style="background:linear-gradient(135deg,#0a1a00,#1a3a00)">
             <span>💻</span>
@@ -474,9 +468,9 @@
             <div class="cert-org">freeCodeCamp</div>
             <div class="cert-year">2022</div>
           </div>
-        </div>
+        </div> -->
 
-        <!-- Certificate 5 -->
+        <!-- Certificate 5 
         <div class="cert-card reveal reveal-delay-1">
           <div class="cert-badge" style="background:linear-gradient(135deg,#001a1a,#003a3a)">
             <span>🔌</span>
@@ -487,9 +481,9 @@
             <div class="cert-org">University of California (Coursera)</div>
             <div class="cert-year">2023</div>
           </div>
-        </div>
+        </div> -->
 
-        <!-- Certificate 6 -->
+        <!-- Certificate 6
         <div class="cert-card reveal reveal-delay-2">
           <div class="cert-badge" style="background:linear-gradient(135deg,#1a001a,#3a003a)">
             <span>⚛️</span>
@@ -500,7 +494,7 @@
             <div class="cert-org">Meta (Coursera)</div>
             <div class="cert-year">2024</div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -567,7 +561,7 @@
             </a>
 
             <!-- Figma -->
-            <a href="https://figma.com/@yourprofile" target="_blank" class="social-icon" title="Figma">
+            <a href="https://figma.com/@xaviered" target="_blank" class="social-icon" title="Figma">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.026-4.49 4.515-4.49c2.49 0 4.515 2.014 4.515 4.49S10.661 24 8.172 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019zm7.703 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/>
               </svg>

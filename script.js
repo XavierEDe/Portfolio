@@ -1,5 +1,3 @@
-
-
 // ======= THEME TOGGLE =======
 const html = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
@@ -98,41 +96,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 statsObserver.observe(statsSection);
-
-// ======= CV DOWNLOAD / UPLOAD =======
-let cvBlob = null;
-let cvFileName = 'DAVID_UDUAK_UDOH_Resume.pdf';
-
-function handleCVDownload() {
-  if (cvBlob) {
-    const url = URL.createObjectURL(cvBlob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = cvFileName;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  } else {
-    const status = document.getElementById('cv-status');
-    const input = document.getElementById('cv-input');
-    status.textContent = '⬆ Select your CV PDF to enable downloads.';
-    input.click();
-  }
-}
-
-function handleCVUpload(event) {
-  const file = event.target.files[0];
-  if (file && file.type === 'application/pdf') {
-    cvBlob = file;
-    cvFileName = file.name;
-    document.getElementById('cv-status').textContent =
-      `✅ CV ready: "${file.name}" — Click "Download CV" to download.`;
-  } else {
-    document.getElementById('cv-status').textContent =
-      '⚠ Please select a valid PDF file.';
-  }
-}
 
 // ======= CONTACT FORM SUBMIT =======
 function handleFormSubmit(e) {
