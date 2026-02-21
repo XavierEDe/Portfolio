@@ -1517,3 +1517,23 @@ body.modal-open {
 @media (max-width: 400px) {
   .certs-grid { grid-template-columns: 1fr; }
 }
+
+body {
+  padding-top: calc(70px + env(safe-area-inset-top, 0px));
+}
+
+html, body {
+  overscroll-behavior-y: none;
+}
+
+@media (max-width: 900px) {
+  nav {
+    background: var(--bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .mobile-nav {
+    top: calc(70px + env(safe-area-inset-top, 0px));
+  }
+}
