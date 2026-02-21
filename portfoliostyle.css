@@ -1510,6 +1510,8 @@ body.modal-open {
     justify-content: center;
     align-items: center;
     padding-bottom: 3rem;
+    min-height: calc(100svh - var(--nav-height));
+
   }
 
   section { padding: 5rem 5%; }
