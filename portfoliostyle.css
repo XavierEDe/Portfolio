@@ -1482,7 +1482,7 @@ body.modal-open {
     display: flex;
     transform: translateY(-110%);
     background: var(--bg);
-    top: 70px;
+    top: calc(70px + env(safe-area-inset-top, 0px));
   }
   .mobile-nav.open { transform: translateY(0); }
 
