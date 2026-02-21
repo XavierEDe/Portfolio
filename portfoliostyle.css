@@ -63,6 +63,7 @@ body {
   overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
   padding-top: var(--nav-height);
+  padding-top: calc(70px + env(safe-area-inset-top));
 }
 
 a {
@@ -98,21 +99,23 @@ body::before {
 /* ===== NAVBAR ===== */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  /* extend background into iPhone safe area */
+  padding-top: env(safe-area-inset-top);
+
+  height: calc(70px + env(safe-area-inset-top));
+
   z-index: 900;
-  padding: 0 5%;
-  height: 70px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   background: var(--nav-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  transition: background var(--transition), box-shadow var(--transition);
-  transform: translateZ(0);
-  will-change: transform;
-  height: var(--nav-height);
 }
 
 nav.scrolled {
@@ -224,6 +227,7 @@ nav.scrolled {
   z-index: 899;
   transform: translateY(-110%);
   transition: transform var(--transition);
+  top: calc(70px + env(safe-area-inset-top));
 }
 
 .mobile-nav.open {
