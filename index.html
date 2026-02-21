@@ -283,7 +283,7 @@
             <div class="project-actions">
               <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
               <a href="https://github.com/XavierEDe/Portfolio.git" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost" onclick="window.open('https://portfolio-roan-three-35.vercel.app/', '_blank')">Details</button>
+              <button class="btn-sm btn-sm-ghost" onclick="window.open('https://david-udoh-portfolio.vercel.app/', '_blank')">Details</button>
             </div>
           </div>
         </div>
@@ -419,7 +419,7 @@
       <div class="certs-grid">
 
         <!-- Certificate 1 -->
-        <div class="cert-card reveal"> 
+         <div class="cert-card reveal" onclick="openCertModal('CyberOps Associate','Cisco Networking Academy','2024','CISCO','cyberops-associate.png')">
           <div class="cert-badge" style="background:linear-gradient(135deg,#0a2040,#003380)">
             <div class="cert-badge-ribbon">CISCO</div>
             <img src="cisco.png" alt="Cisco Badge" class="cert-badge-img">
@@ -428,6 +428,21 @@
             <div class="cert-title">CyberOps Associate</div>
             <div class="cert-org">Cisco Networking Academy</div>
             <div class="cert-year">2024</div>
+          </div>
+        </div>
+
+
+
+        <!-- Certificate 2 -->
+          <div class="cert-card reveal reveal-delay-1" onclick="openCertModal('Alx Virtual Assistant','Alx Africa','2025','Alx','virtual-assistant-certificate.jpeg')">
+            <div class="cert-badge" style="background:linear-gradient(135deg,#1a0a00,#3a2000)">
+            <img src="virtual-assistant-certificate.jpeg" alt="Alx Africa" class="cert-badge-img">
+            <div class="cert-badge-ribbon">Alx</div>
+          </div>
+          <div class="cert-info">
+            <div class="cert-title">Alx Virtual Assistant</div>
+            <div class="cert-org">Alx Africa</div>
+            <div class="cert-year">2025</div>
           </div>
         </div>
 
@@ -443,19 +458,6 @@
             <div class="cert-year">2023</div>
           </div>
         </div> -->
-
-        <!-- Certificate 2 -->
-        <div class="cert-card reveal reveal-delay-2">
-          <div class="cert-badge" style="background:linear-gradient(135deg,#1a0a00,#3a2000)">
-            <img src="virtual-assistant-certificate.jpeg" alt="Alx Africa" class="cert-badge-img">
-            <div class="cert-badge-ribbon">Alx </div>
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">Alx Virtual Assistant</div>
-            <div class="cert-org">Alx Africa</div>
-            <div class="cert-year">2025</div>
-          </div>
-        </div>
 
         <!-- Certificate 4
         <div class="cert-card reveal reveal-delay-3">
@@ -617,6 +619,43 @@
       <a href="#hero" class="footer-back">Back to Top ↑</a>
     </div>
   </footer>
+
+   <!-- CERTIFICATE MODAL -->
+ <div class="cert-modal-overlay" id="certModalOverlay">
+    <div class="cert-modal" id="certModal">
+
+      <button class="cert-modal-close" id="certModalCloseBtn" aria-label="Close">&#x2715;</button>
+
+      <div class="cert-modal-badge" id="modalBadge">
+        <img id="modalCertImg" src="" alt="Certificate" class="cert-modal-img" style="display:none;">
+        <span id="modalEmoji"></span>
+        <div class="cert-modal-ribbon" id="modalRibbon"></div>
+      </div>
+
+      <div class="cert-modal-body">
+        <div class="cert-modal-label">Certificate of Completion</div>
+        <h2 class="cert-modal-title" id="modalTitle"></h2>
+        <div class="cert-modal-org" id="modalOrg"></div>
+        <div class="cert-modal-meta">
+          <span class="cert-modal-year">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span id="modalYear"></span>
+          </span>
+          <span class="cert-modal-badge-tag" id="modalIssuer"></span>
+        </div>
+        <div class="cert-modal-divider"></div>
+        <p class="cert-modal-desc">
+          This certificate has been awarded to <strong>David Uduak Udoh</strong> in recognition
+          of successfully completing the requirements of this professional certification programme.
+        </p>
+        <div class="cert-modal-actions">
+          <button class="btn-primary" id="certModalCloseBtn2">&#x2715; Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
   <script src="script.js"></script>
 </body>
