@@ -7,7 +7,6 @@
   --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
   --radius: 16px;
   --radius-sm: 8px;
-  --nav-height: 70px;
 }
 
 [data-theme="dark"] {
@@ -49,7 +48,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  height: 100%;
 }
 
 body {
@@ -59,11 +57,6 @@ body {
   line-height: 1.7;
   transition: background var(--transition), color var(--transition);
   overflow-x: hidden;
-  min-height: 100%;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
-  padding-top: var(--nav-height);
-  padding-top: calc(70px + env(safe-area-inset-top));
 }
 
 a {
@@ -99,23 +92,24 @@ body::before {
 /* ===== NAVBAR ===== */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  /* extend background into iPhone safe area */
-  padding-top: env(safe-area-inset-top);
-
-  height: calc(70px + env(safe-area-inset-top));
-
+  top: 0; left: 0; right: 0;
   z-index: 900;
-
+  /* Extend into safe area (Dynamic Island / notch) */
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 0;
+  /* Height accounts for safe area */
+  min-height: calc(70px + env(safe-area-inset-top, 0px));
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: var(--nav-bg);
+  background: var(--bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 nav.scrolled {
@@ -227,7 +221,6 @@ nav.scrolled {
   z-index: 899;
   transform: translateY(-110%);
   transition: transform var(--transition);
-  top: calc(70px + env(safe-area-inset-top));
 }
 
 .mobile-nav.open {
@@ -280,7 +273,7 @@ section { padding: 7rem 5%; }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 70px;
+  padding-top: calc(70px + env(safe-area-inset-top, 0px));
   position: relative;
   overflow: hidden;
 }
@@ -1514,8 +1507,6 @@ body.modal-open {
     justify-content: center;
     align-items: center;
     padding-bottom: 3rem;
-    min-height: calc(100svh - var(--nav-height));
-
   }
 
   section { padding: 5rem 5%; }
@@ -1529,29 +1520,6 @@ body.modal-open {
   .hero-title    { font-size: 2.2rem; }
 }
 
-
 @media (max-width: 400px) {
   .certs-grid { grid-template-columns: 1fr; }
 }
-
-body {
-  padding-top: calc(70px + env(safe-area-inset-top, 0px));
-}
-
-html, body {
-  overscroll-behavior-y: none;
-}
-
-@media (max-width: 900px) {
-  nav,
-  .mobile-nav {
-    background: var(--bg) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-}
-  
-
-  .mobile-nav {
-    top: calc(70px + env(safe-area-inset-top, 0px));
-  }
