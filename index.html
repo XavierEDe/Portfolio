@@ -1,659 +1,509 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Udoh, David Uduak — Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EventXed — Discover Global Tech, Fintech & Investor Events</title>
+<link rel="icon" type="image/png" sizes="60x60" href="EventXedLogo2.png">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23060810'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Syne,sans-serif' font-weight='700' font-size='42' fill='%2300E5FF'>D</text></svg>">
-
-  <link rel="stylesheet" href="portfoliostyle.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="eventxed.css">
 </head>
 <body>
 
-  <nav id="navbar">
-    <a href="#hero" class="nav-logo">D<span>.</span>Udoh</a>
-
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Portfolio</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <div class="theme-toggle-thumb" id="themeThumb">
-          <span id="themeIcon"><svg width="15" height="15"><use href="#i-moon"/></svg> </span>
-        </div>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="gotoSection('home')">
+      <img src="/mnt/user-data/uploads/EventXed.png" alt="EventXed" onerror="this.style.display='none';document.querySelector('.nav-logo-fb').style.display='block'">
+      <span class="nav-logo-fb">Event<span>X</span>ed</span>
     </div>
-  </nav>
-
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#about"        onclick="closeMobileNav()">About</a>
-    <a href="#projects"     onclick="closeMobileNav()">Portfolio</a>
-    <a href="#certificates" onclick="closeMobileNav()">Certificates</a>
-    <a href="#contact"      onclick="closeMobileNav()">Contact</a>
+    <div class="nav-links">
+      <a class="active" onclick="gotoSection('home')">Discover</a>
+      <a onclick="gotoSection('events')">Events</a>
+      <a onclick="gotoSection('about')">About</a>
+    </div>
+    <div class="nav-right" id="navRight">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme"><svg width="15" height="15"><use href="#i-moon"/></svg></button>
+      <button class="btn btn-ghost btn-sm" onclick="gotoSection('signin')">Sign In</button>
+      <button class="btn btn-primary btn-sm" onclick="gotoSection('signup')">Get Started <svg width="12" height="12"><use href="#i-arrow"/></svg></button>
+    </div>
   </div>
+</nav>
 
+<!-- HOME -->
+<div id="sec-home">
+<section class="hero">
+  <div class="hero-badge"><span class="pulse"></span>2026 Global Events Directory</div>
+  <h1>Discover Global <span class="hl">Tech, Fintech</span> &amp; Investor Events</h1>
+  <p>Your centralized hub for the world's most important tech, fintech, government, startup, and investor events — upcoming and archived.</p>
+  <div class="search-bar">
+    <svg width="17" height="17"><use href="#i-search"/></svg>
+    <input type="text" id="heroSearch" placeholder="Search events, cities, conferences..." oninput="currentSearch=this.value" onkeydown="if(event.key==='Enter')gotoSection('events')">
+    <button class="btn btn-primary" onclick="gotoSection('events')">Search <svg width="13" height="13"><use href="#i-arrow"/></svg></button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">600+</div><div class="lbl">Events</div></div>
+    <div class="stat-div"></div>
+    <div class="stat"><div class="num">90+</div><div class="lbl">Countries</div></div>
+    <div class="stat-div"></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Categories</div></div>
+    <div class="stat-div"></div>
+    <div class="stat"><div class="num">250K+</div><div class="lbl">Professionals</div></div>
+  </div>
+</section>
 
-
-  <section id="hero">
-
-    <!-- Background decorations -->
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="hero-grid"></div>
-
-    <div class="hero-inner">
-
-      <!-- Left: Text Content -->
-      <div class="hero-content">
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          Available for opportunities
-        </div>
-
-        <h1 class="hero-title">
-          <div class="hero-title-line"><span>Front-End</span></div>
-          <div class="hero-title-line"><span>Developer</span></div>
-          <div class="hero-title-line"><span>&amp; Innovator</span></div>
-        </h1>
-
-        <div class="hero-sub">
-          <span class="sub-tag">Network</span>
-          <span class="sub-tag">IoT</span>
-          <span class="sub-tag">AI</span>
-          <span class="sub-tag">Tech Enthusiast</span>
-          <span class="sub-tag">Embedded Systems</span>
-        </div>
-
-        <p class="hero-tagline">
-          <strong>I Provide Software Solutions</strong> — crafting digital experiences<br>
-          that bridge hardware and software innovation.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#projects" class="btn-primary">View My Work →</a>
-          <a href="#contact"  class="btn-outline">Get In Touch</a>
-        </div>
-      </div>
-
-      <!-- Right: Avatar Visual -->
-      <div class="hero-visual">
-        <div class="hero-avatar-wrap">
-          <div class="hero-ring"></div>
-          <div class="hero-ring-2"></div>
-
-          <div class="hero-avatar-frame" id="heroAvatarFrame">
-                <img src="David_Pic.JPG" alt="David Uduak Udoh">
-          
-          </div>
-
-          <div class="hero-float-badge badge-1"><span>🎨</span> UI/UX Design</div>
-          <div class="hero-float-badge badge-2"><span>🔌</span> IoT Engineer</div>
-          <div class="hero-float-badge badge-3"><span>⚡</span> 3+ Years Exp.</div>
-        </div>
-      </div>
-
+<section class="feat-section">
+  <div class="feat-inner">
+    <div class="feat-hdr">
+      <h2 class="feat-title"><svg width="20" height="20" style="color:var(--orange)"><use href="#i-star"/></svg> Featured 2026 Events</h2>
+      <button onclick="gotoSection('events')" class="btn btn-sm" style="color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05)">View All <svg width="12" height="12"><use href="#i-arrow"/></svg></button>
     </div>
+    <div class="carousel" id="featCarousel"></div>
+  </div>
+</section>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
-      <span>Scroll</span>
+<section class="section" style="padding-top:62px">
+  <div class="sec-hdr">
+    <h2 class="sec-title"><span class="t-icon" style="background:rgba(247,148,29,.12)"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-trend"/></svg></span>Trending Events</h2>
+    <button onclick="gotoSection('events')" class="btn btn-ghost btn-sm">See All <svg width="12" height="12"><use href="#i-arrow"/></svg></button>
+  </div>
+  <div class="egrid" id="trendGrid"></div>
+</section>
+
+<section class="why-section">
+  <div class="why-inner">
+    <h2>Why <span class="hl">EventXed</span>?</h2>
+    <p>Built for founders, developers, investors, and policymakers who need to stay ahead.</p>
+    <div class="wgrid">
+      <div class="wcard"><div class="wicon" style="background:rgba(30,111,255,.1)"><svg width="22" height="22" style="color:var(--blue)"><use href="#i-globe"/></svg></div><h3>Global Coverage</h3><p>Events from 90+ countries across every major tech and finance hub, curated continuously.</p></div>
+      <div class="wcard"><div class="wicon" style="background:rgba(247,148,29,.1)"><svg width="22" height="22" style="color:var(--orange)"><use href="#i-zap"/></svg></div><h3>Current Events First</h3><p>Upcoming 2026 events always appear first. Past events are preserved below as an archive.</p></div>
+      <div class="wcard"><div class="wicon" style="background:rgba(139,92,246,.1)"><svg width="22" height="22" style="color:#8b5cf6"><use href="#i-target"/></svg></div><h3>Smart Filtering</h3><p>Filter by category, country, date, format, and price. Find exactly what you need in seconds.</p></div>
+      <div class="wcard"><div class="wicon" style="background:rgba(5,150,105,.1)"><svg width="22" height="22" style="color:#059669"><use href="#i-ext"/></svg></div><h3>Direct Access</h3><p>Every event links directly to the official website. No middlemen, no friction.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ABOUT ME SECTION -->
-  <section id="about">
-    <div style="max-width:1100px; margin:0 auto;">
-
-      <div class="section-label reveal">About Me</div>
-
-      <div class="about-grid">
-
-        <!-- Left: Photo Card -->
-        <div class="about-photo-wrap reveal">
-          <div class="about-deco-circle"></div>
-          <div class="about-photo-card">
-                <img src="David_Pic.JPG" alt="David Uduak Udoh">
-            <!--
-              Replace with actual photo:
-          
-            <div class="about-photo-placeholder">👨‍💻</div> -->
-            <div class="about-photo-tag">Front-End Developer</div>
-          </div>
-        </div>
-
-        <!-- Right: Bio Content -->
-        <div class="about-content">
-          <div class="section-label reveal">Hello, World!</div>
-
-          <h2 class="about-name reveal">
-            I'm <span class="about-name-highlight">David Uduak Udoh</span>
-          </h2>
-
-          <p class="about-bio reveal">
-            A passionate Front-End Developer with a deep love for building interfaces that are both
-            functional and delightful. I specialize in bridging the gap between software and hardware —
-            from crafting responsive web applications to engineering IoT systems and exploring the
-            frontiers of AI integration.
-          </p>
-
-          <p class="about-bio reveal">
-            My work spans across Network Engineering, Embedded Systems, and modern web development.
-            I thrive at the intersection of technology and creativity, turning complex problems into
-            elegant solutions.
-          </p>
-
-          <div class="about-skills reveal">
-           <!-- <span class="skill-chip">React.js</span> 
-            <span class="skill-chip">TypeScript</span>
-            <span class="skill-chip">Raspberry Pi</span> 
-            <span class="skill-chip">Node.js</span>-->
-            <span class="skill-chip">HTML/CSS</span>
-            <span class="skill-chip">JavaScript</span>
-            <span class="skill-chip">Arduino</span>
-            <span class="skill-chip">Python</span>
-            <span class="skill-chip">Networking</span>
-            <span class="skill-chip">IoT</span>
-          </div>
-
-          <div class="about-cta reveal">
-             <a href="DAVID_UDUAK_UDOH_Resume.pdf" target="_blank" download="DAVID_UDUAK_UDOH_Resume.pdf" class="btn-primary">↓ Download CV</a>
-            <a href="#projects" class="btn-outline">View Projects →</a>
-          </div>
-
-          <p style="font-size:0.72rem; color:var(--text-3); margin-top:0.75rem;" id="cv-status"></p>
-        </div>
-
-      </div>
+<section class="nl">
+  <div class="nl-inner">
+    <h2>Never Miss an Event</h2>
+    <p>Weekly digest of the top 2026 events in your industry, straight to your inbox.</p>
+    <div class="nl-form">
+      <svg width="17" height="17" style="color:rgba(255,255,255,.35)"><use href="#i-mail"/></svg>
+      <input type="email" placeholder="Enter your email address">
+      <button class="btn btn-orange" onclick="showToast('Subscribed! Watch your inbox.')">Subscribe <svg width="13" height="13"><use href="#i-arrow"/></svg></button>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- STATS / QUICK OVERVIEW -->
-  <section id="stats">
-    <div class="stats-grid">
-
-      <div class="stat-card reveal reveal-delay-1"
-           onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-        <!-- <div class="stat-icon"></div> -->
-        <div class="stat-count" data-target="12" data-suffix="+">0</div>
-        <div class="stat-label">All Projects</div>
-        <div class="stat-sublabel">Click to view portfolio →</div>
-      </div>
-
-      <div class="stat-card reveal reveal-delay-2"
-           onclick="document.getElementById('certificates').scrollIntoView({behavior:'smooth'})">
-        <!-- <div class="stat-icon">🏆</div> -->
-        <div class="stat-count" data-target="4" data-suffix="+">0</div>
-        <div class="stat-label">Certificates</div>
-        <div class="stat-sublabel">Click to view credentials →</div>
-      </div>
-
-      <div class="stat-card reveal reveal-delay-3">
-        <!-- <div class="stat-icon">⏳</div> -->
-        <div class="stat-count" data-target="3" data-suffix="+">0</div>
-        <div class="stat-label">Years of Experience</div>
-        <div class="stat-sublabel">In software &amp; hardware</div>
-      </div>
-
+<footer><div class="fi">
+  <div class="fgrid">
+    <div class="fbrand">
+      <img src="EventXedLogo3ng.png" alt="EventXed" onerror="this.style.display='none'">
+      <p>Your centralized hub for global tech, fintech, and investor events. Discover · Connect · Grow.</p>
+      <div class="fsocs"><a class="fsoc"><svg width="13" height="13"><use href="#i-tw"/></svg></a><a class="fsoc"><svg width="13" height="13"><use href="#i-linkedin"/></svg></a><a class="fsoc"><svg width="13" height="13"><use href="#i-mail"/></svg></a></div>
     </div>
-  </section>
+    <div class="fcol"><h4>Platform</h4><a onclick="gotoSection('home')">Home</a><a onclick="gotoSection('events')">Events</a><a onclick="gotoSection('about')">About</a><a onclick="gotoSection('signup')">Get Started</a></div>
+    <div class="fcol"><h4>Categories</h4><a onclick="filterCat('Tech')">Tech</a><a onclick="filterCat('Fintech')">Fintech</a><a onclick="filterCat('Startup')">Startup</a><a onclick="filterCat('Investor')">Investor</a><a onclick="filterCat('Government')">Government</a></div>
+    <div class="fcol"><h4>Company</h4><a onclick="gotoSection('about')">About Us</a><a>Privacy Policy</a><a>Terms</a><a>Contact</a></div>
+  </div>
+  <div class="fbot"><p>&copy; 2026 EventXed. All rights reserved.</p><span class="ftag">Discover &middot; Connect &middot; Grow</span></div>
+</div></footer>
+</div>
 
-
-  <!-- PORTFOLIO SHOWCASE SECTION -->
-  <section id="projects">
-    <div style="max-width:1200px; margin:0 auto;">
-
-      <div class="section-label reveal">Work</div>
-      <h2 class="section-title reveal">Portfolio Showcase</h2>
-      <p class="reveal" style="color:var(--text-2); font-size:0.95rem; max-width:550px; margin-bottom:3rem;">
-        A curated selection of projects spanning front-end development, IoT systems, and embedded engineering.
-      </p>
-
-      <div class="projects-grid" id="projectsGrid">
-
-        <!-- EVENTXED -->
-        <div class="project-card reveal reveal-delay-1">
-          <div class="project-img" style="background:linear-gradient(135deg,#1a100a,#3a2010)">
-            <img src="eventxed.png" alt="EventXed">
-            <div class="project-overlay">
-              <a href="https://eventxed.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">EventXed Event Listing Website</div>
-            <p class="project-desc">
-              A responsive event listing website built with Javascript and CSS. The platform allows users to browse and search for local events, with integration for ticket purchases.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Javascript</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">Paystack</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://eventxed.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div>   
-
-        <!-- AGROCHAIN -->
-        <div class="project-card reveal reveal-delay-3">
-          <div class="project-img" style="background:linear-gradient(135deg,#0a1a0f,#0d3320)">
-            <img src="agrochain.png" alt="AgroChain">
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">AgroChain</div>
-            <p class="project-desc">
-              A blockchain-based supply chain management system for agriculture, designed to enhance transparency and traceability from farm to table. The project includes a Figma prototype of the user interface for tracking produce and verifying authenticity.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Figma</span>
-              <span class="project-tag">Blockchain</span>
-              <span class="project-tag">Sui</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- PHOENIX APP -->
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1060)">
-            <img src="phoenixapp1.png" alt="Phoenix Travel App">
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">Mobile Travel Services App (UI/UX)</div>
-            <p class="project-desc">
-              A mobile app UI/UX design for a travel services platform, created using Figma. The design focuses on user-friendly navigation and an engaging interface to enhance the travel booking experience.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Figma</span>
-              <span class="project-tag">UI/UX</span>
-              <span class="project-tag">Mobile Design</span>
-              <span class="project-tag">Design System</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- FARM FEEDER -->
-        <div class="project-card reveal">
-          <div class="project-img">
-            <img src="farmfeeder.png" alt="Livestock Farm Feeding System">
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">Automated  Time-based Livestock Farm Feeding and Security System</div>
-            <p class="project-desc">
-              An automated, time-based IoT system built to manage livestock feeding and farm security, integrated with smart sensors and real-time monitoring for efficient operations and enhanced safety.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Arduino</span>
-              <span class="project-tag">Esp32</span>
-              <span class="project-tag">C++</span>
-              <span class="project-tag">IoT</span>
-              <span class="project-tag">Circuit Design</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- MY PORTFOLIO -->
-        <div class="project-card reveal reveal-delay-1">
-          <div class="project-img" style="background:linear-gradient(135deg,#0d1b2a,#1a3a5c)">
-            <img src="myportfolio.png" alt="My portfolio">
-            <div class="project-overlay">
-              <a href="https://david-udoh-portfolio.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">My portfolio</div>
-            <p class="project-desc">
-              My personal portfolio website built with JavaScript, showcasing my projects, skills, and experience.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span> 
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">HTML</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://david-udoh-portfolio.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="https://github.com/XavierEDe/Portfolio.git" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost" onclick="window.open('https://david-udoh-portfolio.vercel.app/', '_blank')">Details</button>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Project 6 
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-img" style="background:linear-gradient(135deg,#0a1520,#102840)">
-            <div class="project-img-placeholder">🔐</div>
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">RFID Access Control System</div>
-            <p class="project-desc">
-              Embedded access control system using RFID readers, Arduino microcontrollers, and
-              a web dashboard for management and logging.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Arduino</span>
-              <span class="project-tag">RFID</span>
-              <span class="project-tag">React</span>
-              <span class="project-tag">Firebase</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
+<!-- EVENTS -->
+<div id="sec-events" style="display:none;padding-top:90px">
+  <div style="max-width:1300px;margin:0 auto;padding:36px 28px 0">
+    <h1 style="font-family:'Syne',sans-serif;font-size:1.95rem;font-weight:800;margin-bottom:5px;letter-spacing:-.02em">All Events</h1>
+    <p style="color:var(--muted)">Upcoming 2026 events first — archived past events below</p>
+  </div>
+  <div class="cat-wrap" id="catChips"></div>
+  <div class="filters-bar">
+    <svg width="14" height="14" style="color:var(--muted)"><use href="#i-filter"/></svg>
+    <select class="fsel" id="cFilter" onchange="applyFilters()"><option value="">All Countries</option><option>USA</option><option>UK</option><option>UAE</option><option>Germany</option><option>Singapore</option><option>France</option><option>Nigeria</option><option>India</option><option>Canada</option><option>Portugal</option><option>Finland</option><option>Kenya</option><option>Netherlands</option><option>Switzerland</option><option>Japan</option></select>
+    <select class="fsel" id="mFilter" onchange="applyFilters()"><option value="">All Months</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select>
+    <select class="fsel" id="fmFilter" onchange="applyFilters()"><option value="">All Formats</option><option>In-Person</option><option>Virtual</option><option>Hybrid</option></select>
+    <select class="fsel" id="prFilter" onchange="applyFilters()"><option value="">All Prices</option><option>Free</option><option>Paid</option></select>
+    <select class="fsel" id="tFilter" onchange="applyFilters()"><option value="">Upcoming + Past</option><option value="upcoming">Upcoming Only</option><option value="past">Past Only</option></select>
+    <span style="margin-left:auto;font-size:.83rem;color:var(--muted);font-weight:500" id="filterCnt"></span>
+  </div>
+  <div class="section" style="padding-top:0">
+    <div id="upGrid" class="egrid"></div>
+    <div id="pastDivider" class="past-div" style="display:none"><span><svg width="13" height="13"><use href="#i-clock"/></svg> Past Events Archive</span></div>
+    <div id="pastGrid" class="egrid"></div>
+    <div id="emptyState" style="display:none;text-align:center;padding:80px 24px;color:var(--muted)">
+      <svg width="52" height="52" style="opacity:.2;margin-bottom:14px"><use href="#i-search"/></svg>
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:7px">No events found</h3>
+      <p>Try adjusting your filters or search terms</p>
     </div>
-  </section>
+  </div>
+</div>
 
-
-  <!-- CERTIFICATES SECTION -->
-  <section id="certificates">
-    <div style="max-width:1100px; margin:0 auto;">
-
-      <div class="section-label reveal">Credentials</div>
-      <h2 class="section-title reveal">Certificates</h2>
-      <p class="reveal" style="color:var(--text-2); font-size:0.95rem; max-width:550px; margin-bottom:3rem;">
-        Professional certifications that validate my expertise across multiple technology domains.
-      </p>
-
-      <div class="certs-grid">
-
-        <!-- Certificate 1 -->
-         <div class="cert-card reveal" onclick="openCertModal('CyberOps Associate','Cisco Networking Academy','2024','CISCO','cyberops-associate.png')">
-          <div class="cert-badge" style="background:linear-gradient(135deg,#0a2040,#003380)">
-            <div class="cert-badge-ribbon">CISCO</div>
-            <img src="cisco.png" alt="Cisco Badge" class="cert-badge-img">
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">CyberOps Associate</div>
-            <div class="cert-org">Cisco Networking Academy</div>
-            <div class="cert-year">2024</div>
-          </div>
-        </div>
-
-        <!-- Certificate 2 -->
-          <div class="cert-card reveal reveal-delay-1" onclick="openCertModal('Alx Virtual Assistant','Alx Africa','2025','Alx','virtual-assistant-certificate.jpeg')">
-            <div class="cert-badge" style="background:linear-gradient(135deg,#1a0a00,#3a2000)">
-            <img src="virtual-assistant-certificate.jpeg" alt="Alx Africa" class="cert-badge-img">
-            <div class="cert-badge-ribbon">Alx</div>
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">Alx Virtual Assistant</div>
-            <div class="cert-org">Alx Africa</div>
-            <div class="cert-year">2025</div>
-          </div>
-        </div>
-
-        <!-- Certificate 2 
-        <div class="cert-card reveal reveal-delay-1">
-          <div class="cert-badge" style="background:linear-gradient(135deg,#2d0a3a,#5a0f7a)">
-            <span>☁️</span>
-            <div class="cert-badge-ribbon">AWS</div>
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">AWS Cloud Practitioner</div>
-            <div class="cert-org">Amazon Web Services</div>
-            <div class="cert-year">2023</div>
-          </div>
-        </div> -->
-
-        <!-- Certificate 4
-        <div class="cert-card reveal reveal-delay-3">
-          <div class="cert-badge" style="background:linear-gradient(135deg,#0a1a00,#1a3a00)">
-            <span>💻</span>
-            <div class="cert-badge-ribbon">FREECODECAMP</div>
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">Responsive Web Design</div>
-            <div class="cert-org">freeCodeCamp</div>
-            <div class="cert-year">2022</div>
-          </div>
-        </div> -->
-
-        <!-- Certificate 5 
-        <div class="cert-card reveal reveal-delay-1">
-          <div class="cert-badge" style="background:linear-gradient(135deg,#001a1a,#003a3a)">
-            <span>🔌</span>
-            <div class="cert-badge-ribbon">COURSERA</div>
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">IoT and Embedded Systems</div>
-            <div class="cert-org">University of California (Coursera)</div>
-            <div class="cert-year">2023</div>
-          </div>
-        </div> -->
-
-        <!-- Certificate 6
-        <div class="cert-card reveal reveal-delay-2">
-          <div class="cert-badge" style="background:linear-gradient(135deg,#1a001a,#3a003a)">
-            <span>⚛️</span>
-            <div class="cert-badge-ribbon">META</div>
-          </div>
-          <div class="cert-info">
-            <div class="cert-title">React Front-End Developer</div>
-            <div class="cert-org">Meta (Coursera)</div>
-            <div class="cert-year">2024</div>
-          </div>
-        </div> -->
-
-      </div>
+<!-- ABOUT -->
+<div id="sec-about" style="display:none;padding-top:66px">
+<div class="about-hero">
+  <div class="about-hi">
+    <div class="abadge"><svg width="12" height="12"><use href="#i-globe"/></svg> Our Story</div>
+    <h1>Connecting the World's <span class="hl">Professional Event</span> Community</h1>
+    <p>EventXed was founded on a simple conviction: the most transformative ideas in tech, finance, and governance emerge when the right people gather in the same room. We built the platform we always wished existed.</p>
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+      <button class="btn btn-orange btn-lg" onclick="gotoSection('events')">Explore Events <svg width="14" height="14"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-lg" onclick="gotoSection('signup')" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff">Join EventXed</button>
     </div>
-  </section>
-
-
-  <!-- CONTACT ME -->
-  <section id="contact">
-    <div style="max-width:1000px; margin:0 auto;">
-
-      <div class="section-label reveal">Let's Connect</div>
-      <h2 class="section-title reveal">Contact Me</h2>
-
-      <div class="contact-wrap">
-
-        <!-- Left: Info + Social Links -->
-        <div class="reveal">
-          <h3 class="contact-info-title">Ready to work together?</h3>
-          <p class="contact-desc">
-            Whether you have a project in mind, need a collaborator, or just want to connect —
-            my inbox is always open. I'll do my best to respond within 24 hours.
-          </p>
-
-          <a href="mailto:davidudoh@email.com" class="contact-email-link">
-            dave.uduak@gmail.com
-          </a>
-
-          <div class="social-title">Find me online</div>
-          <div class="social-icons">
-
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/david-uduak01" target="_blank" class="social-icon" title="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/daviduduak" target="_blank" class="social-icon" title="GitHub">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-              </svg>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://instagram.com/xavier.ed_" target="_blank" class="social-icon" title="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-            </a>
-
-            <!-- WhatsApp -->
-            <a href="https://wa.me/2348074657635" target="_blank" class="social-icon" title="WhatsApp">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-            </a>
-
-            <!-- Twitter / X -->
-            <a href="https://twitter.com/XavierED_1" target="_blank" class="social-icon" title="Twitter (X)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-
-            <!-- Figma -->
-            <a href="https://figma.com/@xaviered" target="_blank" class="social-icon" title="Figma">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.026-4.49 4.515-4.49c2.49 0 4.515 2.014 4.515 4.49S10.661 24 8.172 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019zm7.703 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/>
-              </svg>
-            </a>
-
-            <!-- Email -->
-            <a href="mailto:dave.uduak@gmail.com" class="social-icon" title="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Right: Contact Form -->
-        <div class="reveal reveal-delay-2">
-          <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
-
-            <div class="form-group">
-              <label class="form-label" for="formName">Full Name</label>
-              <input type="text" id="formName" class="form-input" placeholder="John Doe" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="formEmail">Email Address</label>
-              <input type="email" id="formEmail" class="form-input" placeholder="john@example.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="formMessage">Message</label>
-              <textarea id="formMessage" class="form-input" placeholder="Tell me about your project or just say hi..." required></textarea>
-            </div>
-
-            <div class="form-success" id="formSuccess">
-              ✓ Message sent! I'll get back to you shortly.
-            </div>
-
-            <button type="submit" class="form-btn">Send Message</button>
-
-          </form>
-        </div>
-
-      </div>
+    <div class="about-stats-row">
+      <div class="astat"><div class="n">2026</div><div class="l">Founded</div></div>
+      <div class="astat"><div class="n">600+</div><div class="l">Events Listed</div></div>
+      <div class="astat"><div class="n">90+</div><div class="l">Countries</div></div>
+      <div class="astat"><div class="n">250K+</div><div class="l">Professionals</div></div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <footer>
-    <div class="footer-logo">D<span>.</span>Udoh</div>
-    <div>Copyright © 2026 XED &middot;  All rights reserved. </div>
-    <div>
-      <a href="#hero" class="footer-back">Back to Top ↑</a>
+<div class="about-body">
+  <div class="about-lead">
+    <h2>The Problem We Set Out to Solve</h2>
+    <p>Every year, thousands of world-class events take place across the globe — yet discovering them requires crawling through dozens of fragmented websites, Twitter threads, and email newsletters. Founders miss investment summits. Developers skip conferences that could have changed their trajectory. Investors overlook policy forums shaping the very markets they operate in. EventXed eliminates that friction entirely.</p>
+  </div>
+  <div class="about-story">
+    <div class="ast">
+      <h2>Built by Professionals, for Professionals</h2>
+      <p>EventXed emerged from a shared frustration within our founding team — all veterans of the global tech and fintech ecosystem. Having attended hundreds of events across four continents, we understood precisely how much value was locked inside these gatherings: deal flow, partnerships, mentorship, and insights that simply don't exist anywhere else.</p>
+      <p>We designed EventXed to serve five core communities: <strong>technology professionals</strong> tracking the latest developments in AI, Web3, and cloud infrastructure; <strong>fintech innovators</strong> navigating regulation and scaling payment systems; <strong>startup founders</strong> raising capital and finding product-market fit; <strong>investors</strong> deploying capital into the next generation of companies; and <strong>government and policy leaders</strong> shaping the digital economy from the top down.</p>
+      <p>Our curation is rigorous. Every event on EventXed is manually reviewed for legitimacy, relevance, and quality before it appears on the platform. We maintain direct relationships with organizers on six continents. We are not an aggregator — we are a curator.</p>
     </div>
-  </footer>
-
-   <!-- CERTIFICATE MODAL -->
- <div class="cert-modal-overlay" id="certModalOverlay">
-    <div class="cert-modal" id="certModal">
-
-      <button class="cert-modal-close" id="certModalCloseBtn" aria-label="Close">&#x2715;</button>
-
-      <div class="cert-modal-badge" id="modalBadge">
-        <img id="modalCertImg" src="" alt="Certificate" class="cert-modal-img" style="display:none;">
-        <span id="modalEmoji"></span>
-        <div class="cert-modal-ribbon" id="modalRibbon"></div>
+    <div class="about-visual">
+      <div class="qblock">
+        <span class="qmark">&ldquo;</span>
+        <p>The most valuable conversations in any industry don't happen on social media. They happen in conference rooms, at dinner tables, and in hallway chats between sessions. EventXed is the map to those rooms.</p>
+        <cite>Adaeze Okafor, Co-Founder &amp; CEO</cite>
       </div>
-
-      <div class="cert-modal-body">
-        <div class="cert-modal-label">Certificate of Completion</div>
-        <h2 class="cert-modal-title" id="modalTitle"></h2>
-        <div class="cert-modal-org" id="modalOrg"></div>
-        <div class="cert-modal-meta">
-          <span class="cert-modal-year">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span id="modalYear"></span>
-          </span>
-          <span class="cert-modal-badge-tag" id="modalIssuer"></span>
-        </div>
-        <div class="cert-modal-divider"></div>
-        <p class="cert-modal-desc">
-          This certificate has been awarded to <strong>David Uduak Udoh</strong> in recognition
-          of successfully completing the requirements of this professional certification programme.
-        </p>
-        <div class="cert-modal-actions">
-          <button class="btn-primary" id="certModalCloseBtn2">&#x2715; Close</button>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <h2 class="vh2">Our Core Values</h2>
+  <div class="vgrid">
+    <div class="vcard"><div class="vicon" style="background:rgba(30,111,255,.1)"><svg width="20" height="20" style="color:var(--blue)"><use href="#i-shield"/></svg></div><h3>Integrity First</h3><p>Every event listing is manually verified. We never accept payment to elevate events in our rankings. Our curation is independent and honest.</p></div>
+    <div class="vcard"><div class="vicon" style="background:rgba(247,148,29,.1)"><svg width="20" height="20" style="color:var(--orange)"><use href="#i-globe"/></svg></div><h3>Truly Global</h3><p>We actively resist the bias toward Western tech hubs. Events in Lagos, Nairobi, Riyadh, and Singapore receive the same prominence as those in San Francisco and London.</p></div>
+    <div class="vcard"><div class="vicon" style="background:rgba(139,92,246,.1)"><svg width="20" height="20" style="color:#8b5cf6"><use href="#i-users"/></svg></div><h3>Community-Driven</h3><p>Our platform is shaped by the professionals who use it. We actively solicit event submissions, feedback, and category suggestions from our user base.</p></div>
+    <div class="vcard"><div class="vicon" style="background:rgba(5,150,105,.1)"><svg width="20" height="20" style="color:#059669"><use href="#i-zap"/></svg></div><h3>Always Current</h3><p>Upcoming events are always surfaced first. Past events are preserved as a research archive, because context and precedent matter in every field.</p></div>
+    <div class="vcard"><div class="vicon" style="background:rgba(225,29,72,.1)"><svg width="20" height="20" style="color:#e11d48"><use href="#i-heart"/></svg></div><h3>Accessibility</h3><p>We surface free and low-cost events alongside premium conferences, because great ideas and great communities exist at every price point.</p></div>
+    <div class="vcard"><div class="vicon" style="background:rgba(14,165,233,.1)"><svg width="20" height="20" style="color:#0ea5e9"><use href="#i-award"/></svg></div><h3>Design Excellence</h3><p>Discovery should be effortless and beautiful. We invest heavily in design because finding your next event should be as good as the event itself.</p></div>
+  </div>
+</div>
 
-  <script src="script.js"></script>
+<section class="team-section">
+  <div class="team-inner">
+    <h2>The Team Behind EventXed</h2>
+    <p class="tsub">A cross-continental team of builders, investors, and event professionals united by one mission.</p>
+    <div class="tgrid">
+      <div class="tcard"><div class="tavatar" style="background:linear-gradient(135deg,var(--blue),var(--blue-l))">AO</div><h3>Adaeze Okafor</h3><div class="trole">Co-Founder &amp; CEO</div><p>Former VP at a pan-African fintech. Attended 200+ global conferences across 30 countries.</p></div>
+      <div class="tcard"><div class="tavatar" style="background:linear-gradient(135deg,var(--orange),var(--orange-l))">KM</div><h3>Kwame Mensah</h3><div class="trole">Co-Founder &amp; CTO</div><p>Full-stack engineer and former tech lead at a Series B startup. Tools used by 40K+ engineers.</p></div>
+      <div class="tcard"><div class="tavatar" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">SR</div><h3>Sofia Reyes</h3><div class="trole">Head of Curation</div><p>Ex-conference organizer with 12 years running events across Latin America and Europe.</p></div>
+      <div class="tcard"><div class="tavatar" style="background:linear-gradient(135deg,#059669,#34d399)">TN</div><h3>Takeshi Nakamura</h3><div class="trole">Head of Partnerships</div><p>Former investment associate with deep networks across the APAC startup ecosystem.</p></div>
+      <div class="tcard"><div class="tavatar" style="background:linear-gradient(135deg,#0ea5e9,#38bdf8)">LA</div><h3>Lena Albrecht</h3><div class="trole">Head of Design</div><p>Product designer with a decade of experience at high-growth tech companies in Berlin.</p></div>
+      <div class="tcard"><div class="tavatar" style="background:linear-gradient(135deg,#e11d48,#fb7185)">DB</div><h3>David Balogun</h3><div class="trole">Head of Community</div><p>Community builder and advocate. Built Nigeria's largest developer Slack community.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="road-section">
+  <div class="road-inner">
+    <h2>Our Roadmap</h2>
+    <div class="ri"><div class="rdot done"><svg width="14" height="14" style="color:#fff"><use href="#i-check"/></svg></div><div class="rc"><div class="rtag done">Completed</div><h3>Platform Launch &amp; Core Event Database</h3><p>Launched with 600+ manually curated global events across 5 categories and 90+ countries.</p></div></div>
+    <div class="ri"><div class="rdot done"><svg width="14" height="14" style="color:#fff"><use href="#i-check"/></svg></div><div class="rc"><div class="rtag done">Completed</div><h3>Secure Admin Dashboard with Image Upload</h3><p>Admin-only panel with event creation, photo upload, editing, and deletion. Accessible only to admin@eventxed.com.</p></div></div>
+    <div class="ri"><div class="rdot done"><svg width="14" height="14" style="color:#fff"><use href="#i-check"/></svg></div><div class="rc"><div class="rtag done">Completed</div><h3>User Authentication</h3><p>Sign-in with Google, Apple, and Facebook plus email/password with role-based access control.</p></div></div>
+    <div class="ri"><div class="rdot now"><svg width="12" height="12" style="color:#fff"><use href="#i-zap"/></svg></div><div class="rc"><div class="rtag now">In Progress</div><h3>Saved Events &amp; Email Alerts</h3><p>Bookmark events, receive personalized weekly digests, and set attendance reminders.</p></div></div>
+    <div class="ri"><div class="rdot next"><svg width="12" height="12" style="color:var(--muted)"><use href="#i-cal"/></svg></div><div class="rc"><div class="rtag next">Q2 2026</div><h3>Community Event Submissions</h3><p>Open the platform for community-submitted events with organizer verification workflow.</p></div></div>
+    <div class="ri"><div class="rdot next"><svg width="12" height="12" style="color:var(--muted)"><use href="#i-rocket"/></svg></div><div class="rc"><div class="rtag next">Q4 2026</div><h3>EventXed Mobile App</h3><p>Native iOS and Android apps with offline access, push notifications, and live event feeds.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="fi">
+  <div class="fgrid">
+    <div class="fbrand"><img src="EventXedLogo3ng.png" alt="EventXed" onerror="this.style.display='none'"><p>Your centralized hub for global tech, fintech, and investor events.</p><div class="fsocs"><a class="fsoc"><svg width="13" height="13"><use href="#i-tw"/></svg></a><a class="fsoc"><svg width="13" height="13"><use href="#i-linkedin"/></svg></a><a class="fsoc"><svg width="13" height="13"><use href="#i-mail"/></svg></a></div></div>
+    <div class="fcol"><h4>Platform</h4><a onclick="gotoSection('home')">Home</a><a onclick="gotoSection('events')">Events</a><a onclick="gotoSection('about')">About</a></div>
+    <div class="fcol"><h4>Categories</h4><a onclick="filterCat('Tech')">Tech</a><a onclick="filterCat('Fintech')">Fintech</a><a onclick="filterCat('Startup')">Startup</a></div>
+    <div class="fcol"><h4>Company</h4><a>Privacy Policy</a><a>Terms</a><a>Contact</a></div>
+  </div>
+  <div class="fbot"><p>&copy; 2026 EventXed. All rights reserved.</p><span class="ftag">Discover &middot; Connect &middot; Grow</span></div>
+</div></footer>
+</div>
+
+<!-- SIGN IN -->
+<div id="sec-signin" style="display:none">
+<div class="auth-page">
+  <div class="auth-vis">
+    <div class="auth-vc">
+      <div class="auth-logo">
+        <img src="/mnt/user-data/uploads/EventXed.png" alt="EventXed" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="afb">Event<span>X</span>ed</span>
+      </div>
+      <h2>Welcome back to the world's event platform</h2>
+      <p>Sign in to access your saved events, personalized recommendations, and event alerts tailored to your industry.</p>
+      <div class="afl">
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-star"/></svg></div><span>Access your saved &amp; bookmarked events</span></div>
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-mail"/></svg></div><span>Receive personalized weekly event digests</span></div>
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-globe"/></svg></div><span>Discover events matched to your profile</span></div>
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-lock"/></svg></div><span>Admin access for platform managers</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="auth-panel">
+    <button class="back-link" onclick="gotoSection('home')"><svg width="14" height="14"><use href="#i-arrow-left"/></svg> Back to EventXed</button>
+    <h1>Sign In</h1>
+    <p class="auth-sub">Don't have an account? <a onclick="gotoSection('signup')">Create one free</a></p>
+
+    <button class="soc-btn" onclick="handleSocial('Google')">
+      <svg class="sbi" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      Continue with Google
+    </button>
+    <button class="soc-btn" onclick="handleSocial('Apple')" style="background:var(--navy);color:#fff;border-color:var(--navy)">
+      <svg class="sbi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Continue with Apple
+    </button>
+    <button class="soc-btn" onclick="handleSocial('Facebook')" style="background:#1877F2;color:#fff;border-color:#1877F2">
+      <svg class="sbi" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Continue with Facebook
+    </button>
+
+    <div class="auth-divider">or sign in with email</div>
+    <div class="auth-err" id="siErr"><svg width="14" height="14"><use href="#i-alert"/></svg><span id="siErrMsg"></span></div>
+    <div class="fg"><label>Email Address</label><input type="email" id="siEmail" placeholder="you@example.com"></div>
+    <div class="fg"><label>Password</label>
+      <div class="pw-wrap"><input type="password" id="siPw" placeholder="Enter your password">
+        <button class="pw-toggle" type="button" onclick="togglePw('siPw',this)"><svg width="15" height="15"><use href="#i-eye"/></svg></button>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <label style="display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--muted);cursor:pointer"><input type="checkbox" style="accent-color:var(--blue)"> Remember me</label>
+      <a style="font-size:.84rem;color:var(--blue);font-weight:600;cursor:pointer">Forgot password?</a>
+    </div>
+    <button class="btn btn-primary btn-full btn-lg" onclick="doSignin()">Sign In <svg width="14" height="14"><use href="#i-arrow"/></svg></button>
+    <div class="auth-note" style="margin-top:20px">By signing in you agree to our <a>Terms</a> and <a>Privacy Policy</a>.</div>
+  </div>
+</div>
+</div>
+
+<!-- SIGN UP -->
+<div id="sec-signup" style="display:none">
+<div class="auth-page">
+  <div class="auth-vis">
+    <div class="auth-vc">
+      <div class="auth-logo">
+        <img src="/mnt/user-data/uploads/EventXed.png" alt="EventXed" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="afb">Event<span>X</span>ed</span>
+      </div>
+      <h2>Join 250,000+ professionals discovering world-class events</h2>
+      <p>Create your free EventXed account and get instant access to 600+ curated global events in tech, fintech, startup, investor, and government spaces.</p>
+      <div class="afl">
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-check"/></svg></div><span>Free forever — no credit card required</span></div>
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-star"/></svg></div><span>Save and bookmark events you love</span></div>
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-zap"/></svg></div><span>Personalized event recommendations</span></div>
+        <div class="afl-item"><div class="afl-icon"><svg width="14" height="14" style="color:var(--orange)"><use href="#i-mail"/></svg></div><span>Weekly digest of events in your field</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="auth-panel">
+    <button class="back-link" onclick="gotoSection('home')"><svg width="14" height="14"><use href="#i-arrow-left"/></svg> Back to EventXed</button>
+    <h1>Create Account</h1>
+    <p class="auth-sub">Already have an account? <a onclick="gotoSection('signin')">Sign in</a></p>
+
+    <button class="soc-btn" onclick="handleSocial('Google')">
+      <svg class="sbi" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      Sign up with Google
+    </button>
+    <button class="soc-btn" onclick="handleSocial('Apple')" style="background:var(--navy);color:#fff;border-color:var(--navy)">
+      <svg class="sbi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Sign up with Apple
+    </button>
+    <button class="soc-btn" onclick="handleSocial('Facebook')" style="background:#1877F2;color:#fff;border-color:#1877F2">
+      <svg class="sbi" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Sign up with Facebook
+    </button>
+
+    <div class="auth-divider">or sign up with email</div>
+    <div class="frow">
+      <div class="fg"><label>First Name</label><input type="text" id="suFirst" placeholder="Ada"></div>
+      <div class="fg"><label>Last Name</label><input type="text" id="suLast" placeholder="Okafor"></div>
+    </div>
+    <div class="fg"><label>Email Address</label><input type="email" id="suEmail" placeholder="you@example.com"></div>
+    <div class="fg"><label>Password</label>
+      <div class="pw-wrap"><input type="password" id="suPw" placeholder="Min. 8 characters">
+        <button class="pw-toggle" type="button" onclick="togglePw('suPw',this)"><svg width="15" height="15"><use href="#i-eye"/></svg></button>
+      </div>
+    </div>
+    <div class="fg"><label>Industry / Role</label>
+      <select id="suRole"><option value="">Select your role</option><option>Founder / Entrepreneur</option><option>Investor / VC</option><option>Software Engineer / Developer</option><option>Product Manager</option><option>Fintech Professional</option><option>Government / Policy</option><option>Journalist / Media</option><option>Student / Researcher</option><option>Other</option></select>
+    </div>
+    <div class="fcheck"><input type="checkbox" id="suTerms"><label for="suTerms">I agree to the <a>Terms of Service</a> and <a>Privacy Policy</a>, and consent to receive event digest emails.</label></div>
+    <button class="btn btn-primary btn-full btn-lg" onclick="doSignup()">Create Free Account <svg width="14" height="14"><use href="#i-arrow"/></svg></button>
+  </div>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="eventModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-img" id="mHero"></div>
+    <button class="mclose" onclick="closeModal()"><svg width="12" height="12"><use href="#i-x"/></svg></button>
+    <div class="mbody">
+      <div class="mmeta" id="mBadges"></div>
+      <h2 class="mtitle" id="mTitle"></h2>
+      <p class="morg" id="mOrg"></p>
+      <p class="mdesc" id="mDesc"></p>
+      <div class="minfo" id="mInfo"></div>
+      <div class="mactions">
+        <a id="mUrl" href="#" target="_blank" rel="noopener" class="btn btn-primary"><svg width="14" height="14"><use href="#i-ext"/></svg> Visit Official Website</a>
+        <button class="share-btn" onclick="shareEvent()" title="Copy link"><svg width="14" height="14"><use href="#i-link"/></svg></button>
+        <button class="share-btn" onclick="shareTw()"><svg width="14" height="14"><use href="#i-tw"/></svg></button>
+        <button class="share-btn" onclick="shareLI()"><svg width="14" height="14"><use href="#i-linkedin"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN FAB -->
+<button class="admin-fab" id="adminFab" style="display:none" onclick="toggleAdmin()">
+  <svg width="18" height="18"><use href="#i-settings"/></svg>
+</button>
+
+<!-- ADMIN DRAWER -->
+<div class="admin-drawer" id="adminDrawer">
+  <div class="admin-hdr">
+    <h2><svg width="15" height="15" style="color:var(--orange)"><use href="#i-settings"/></svg> Admin Panel</h2>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="admin-badge">&#x2022; Admin</span>
+      <button class="icon-btn" onclick="closeAdmin()"><svg width="13" height="13"><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+  <div class="admin-tabs">
+    <div class="atab active" id="aTab-add" onclick="switchTab('add')"><svg width="12" height="12"><use href="#i-plus"/></svg> Add Event</div>
+    <div class="atab" id="aTab-manage" onclick="switchTab('manage')"><svg width="12" height="12"><use href="#i-list"/></svg> Manage</div>
+    <div class="atab" id="aTab-stats" onclick="switchTab('stats')"><svg width="12" height="12"><use href="#i-trend"/></svg> Stats</div>
+  </div>
+
+  <!-- ADD TAB -->
+  <div class="atab-content active" id="aContent-add">
+    <form onsubmit="addEvent(event)">
+      <!-- Image Upload -->
+      <div class="fg" style="margin-bottom:16px">
+        <label style="display:flex;align-items:center;gap:5px"><svg width="12" height="12"><use href="#i-image"/></svg> Event Photo</label>
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="imgFile" accept="image/*" onchange="handleImgFile(this)">
+          <svg width="28" height="28" style="color:var(--muted);margin-bottom:6px"><use href="#i-upload"/></svg>
+          <p><strong>Click to upload</strong> or drag &amp; drop</p>
+          <p style="font-size:.74rem;margin-top:3px">PNG, JPG, WEBP up to 5 MB</p>
+        </div>
+        <div class="preview-wrap" id="previewWrap">
+          <img id="previewImg" src="" alt="Preview">
+          <button class="rm-btn" type="button" onclick="removeImg()"><svg width="10" height="10"><use href="#i-x"/></svg></button>
+        </div>
+        <div style="margin-top:8px">
+          <label style="font-size:.73rem;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;margin-bottom:4px;display:block">Or paste image URL</label>
+          <input type="url" id="aImgUrl" placeholder="https://example.com/photo.jpg" oninput="previewUrl(this.value)" style="width:100%;padding:9px 13px;border:1.5px solid var(--border);border-radius:var(--rs);background:var(--s2);color:var(--text);font-family:inherit;font-size:.86rem;outline:none;transition:border-color var(--t)">
+        </div>
+      </div>
+
+      <div class="fg"><label>Event Name *</label><input type="text" id="aName" required placeholder="e.g. Consensus 2026"></div>
+      <div class="fg"><label>Category *</label><select id="aCat" required><option value="">Select category</option><option>Tech</option><option>Fintech</option><option>Startup</option><option>Investor</option><option>Government</option></select></div>
+      <div class="frow">
+        <div class="fg"><label>Date *</label><input type="date" id="aDate" required></div>
+        <div class="fg"><label>Format</label><select id="aFmt"><option>In-Person</option><option>Virtual</option><option>Hybrid</option></select></div>
+      </div>
+      <div class="fg"><label>City &amp; Country *</label><input type="text" id="aLoc" required placeholder="e.g. Dubai, UAE"></div>
+      <div class="frow">
+        <div class="fg"><label>Country (filter)</label><input type="text" id="aCountry" placeholder="e.g. UAE"></div>
+        <div class="fg"><label>Price</label><select id="aPrc"><option>Paid</option><option>Free</option></select></div>
+      </div>
+      <div class="fg"><label>Organizer</label><input type="text" id="aOrg" placeholder="e.g. CoinDesk"></div>
+      <div class="fg"><label>Description *</label><textarea id="aDesc" required placeholder="Describe the event..."></textarea></div>
+      <div class="fg"><label>Official Website *</label><input type="url" id="aUrl" required placeholder="https://..."></div>
+      <div class="fg" style="margin-bottom:16px">
+        <label style="display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:.87rem;font-weight:500;color:var(--text)">
+          <input type="checkbox" id="aFeat" style="width:auto;accent-color:var(--orange)"> Mark as Featured
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full"><svg width="13" height="13"><use href="#i-plus"/></svg> Publish Event</button>
+    </form>
+  </div>
+
+  <!-- MANAGE TAB -->
+  <div class="atab-content" id="aContent-manage">
+    <div class="admin-stat-bar" id="adminStat"><svg width="13" height="13"><use href="#i-eye"/></svg></div>
+    <div style="margin-bottom:12px">
+      <input type="text" id="adminSearch" placeholder="Search events..." oninput="renderAdminList()" style="width:100%;padding:9px 13px;border:1.5px solid var(--border);border-radius:var(--rs);background:var(--s2);color:var(--text);font-family:inherit;font-size:.86rem;outline:none">
+    </div>
+    <div id="adminList" style="display:flex;flex-direction:column;gap:0;max-height:55vh;overflow-y:auto"></div>
+  </div>
+
+  <!-- STATS TAB -->
+  <div class="atab-content" id="aContent-stats" id="adminStats">
+    <div id="statsContent"></div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav">
+  <div class="mob-nav-items">
+    <button class="mob-ni active" onclick="gotoSection('home')"><svg width="20" height="20"><use href="#i-home"/></svg><span>Home</span></button>
+    <button class="mob-ni" onclick="gotoSection('events')"><svg width="20" height="20"><use href="#i-list"/></svg><span>Events</span></button>
+    <button class="mob-ni" onclick="gotoSection('about')"><svg width="20" height="20"><use href="#i-info"/></svg><span>About</span></button>
+    <button class="mob-ni" onclick="gotoSection('signup')"><svg width="20" height="20"><use href="#i-user"/></svg><span>Account</span></button>
+  </div>
+</div>
+
+<!-- SVG SPRITE -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-tw" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+</svg>
+
+<div class="toast" id="toast"><svg width="13" height="13"><use href="#i-check"/></svg><span id="toastMsg"></span></div>
+
+<script src="eventxed.js"></script>
 </body>
 </html>
