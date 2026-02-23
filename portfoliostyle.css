@@ -96,8 +96,8 @@ nav {
   z-index: 900;
   /* Extend into safe area (Dynamic Island / notch) */
   padding-top: env(safe-area-inset-top, 0px);
-  padding-left: 0%;
-  padding-right: 0%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-bottom: 0;
   /* Height accounts for safe area */
   min-height: calc(70px + env(safe-area-inset-top, 0px));
@@ -187,6 +187,7 @@ nav.scrolled {
 [data-theme="light"] .theme-toggle-thumb {
   transform: translateX(20px);
 }
+  
 
 /*  HAMBURGER  */
 .hamburger {
