@@ -38,7 +38,7 @@
   --accent-glow: rgba(0,110,223,0.12);
 }
 
-/* ===== RESET & BASE ===== */
+/*  RESET & BASE  */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -73,7 +73,7 @@ ul {
   list-style: none;
 }
 
-/* ===== NOISE TEXTURE OVERLAY ===== */
+/*  NOISE TEXTURE OVERLAY  */
 body::before {
   content: '';
   position: fixed;
@@ -84,20 +84,20 @@ body::before {
   opacity: 0.5;
 }
 
-/* ===== SCROLLBAR ===== */
+/*  SCROLLBAR  */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-2); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
-/* ===== NAVBAR ===== */
+/*  NAVBAR  */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 900;
   /* Extend into safe area (Dynamic Island / notch) */
   padding-top: env(safe-area-inset-top, 0px);
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
   padding-bottom: 0;
   /* Height accounts for safe area */
   min-height: calc(70px + env(safe-area-inset-top, 0px));
@@ -159,7 +159,7 @@ nav.scrolled {
   gap: 1rem;
 }
 
-/* ===== THEME TOGGLE ===== */
+/*  THEME TOGGLE  */
 .theme-toggle {
   width: 44px; height: 24px;
   background: var(--bg-3);
@@ -188,7 +188,7 @@ nav.scrolled {
   transform: translateX(20px);
 }
 
-/* ===== HAMBURGER ===== */
+/*  HAMBURGER  */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -207,7 +207,7 @@ nav.scrolled {
   transition: transform var(--transition), opacity var(--transition);
 }
 
-/* ===== MOBILE NAV ===== */
+/*  MOBILE NAV  */
 .mobile-nav {
   display: none;
   position: fixed;
@@ -236,7 +236,7 @@ nav.scrolled {
 
 .mobile-nav a:hover { color: var(--accent); }
 
-/* ===== SECTIONS ===== */
+/*  SECTIONS  */
 section { padding: 7rem 5%; }
 
 .section-label {
@@ -268,7 +268,7 @@ section { padding: 7rem 5%; }
   margin-bottom: 1rem;
 }
 
-/* ===== HERO ===== */
+/*  HERO  */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -440,7 +440,7 @@ section { padding: 7rem 5%; }
   opacity: 0;
 }
 
-/* ===== BUTTONS ===== */
+/*  BUTTONS  */
 .btn-primary {
   padding: 0.85rem 2rem;
   background: var(--accent);
@@ -484,7 +484,7 @@ section { padding: 7rem 5%; }
   transform: translateY(-2px);
 }
 
-/* ===== HERO VISUAL ===== */
+/*  HERO VISUAL  */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -577,7 +577,7 @@ section { padding: 7rem 5%; }
   50% { transform: translateY(10px); }
 }
 
-/* ===== SCROLL INDICATOR ===== */
+/*  SCROLL INDICATOR  */
 .scroll-indicator {
   position: absolute;
   bottom: 2.5rem;
@@ -619,7 +619,7 @@ section { padding: 7rem 5%; }
   100% { transform: translateY(16px); opacity: 0; }
 }
 
-/* ===== ABOUT ===== */
+/*  ABOUT  */
 #about { background: var(--bg-2); }
 
 .about-grid {
@@ -747,7 +747,7 @@ section { padding: 7rem 5%; }
   font-size: 0.85rem;
 }
 
-/* ===== STATS ===== */
+/*  STATS  */
 #stats {
   background: var(--bg);
   padding: 4rem 5%;
@@ -817,7 +817,7 @@ section { padding: 7rem 5%; }
   margin-top: 0.25rem;
 }
 
-/* ===== PORTFOLIO ===== */
+/*  PORTFOLIO  */
 #projects { background: var(--bg-2); }
 
 .projects-grid {
@@ -956,7 +956,7 @@ section { padding: 7rem 5%; }
 
 .btn-sm-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ===== CERTIFICATES ===== */
+/*  CERTIFICATES  */
 #certificates { background: var(--bg); }
 
 .certs-grid {
@@ -1032,7 +1032,7 @@ section { padding: 7rem 5%; }
   color: var(--text-3);
 }
 
-/* ===== CONTACT ===== */
+/*  CONTACT  */
 #contact { background: var(--bg-2); }
 
 .contact-wrap {
@@ -1110,7 +1110,7 @@ section { padding: 7rem 5%; }
   box-shadow: 0 6px 20px rgba(0,229,255,0.3);
 }
 
-/* ===== CONTACT FORM ===== */
+/*  CONTACT FORM  */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -1190,7 +1190,7 @@ textarea.form-input {
   gap: 0.5rem;
 }
 
-/* ===== FOOTER ===== */
+/*  FOOTER  */
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -1220,7 +1220,7 @@ footer {
 
 .footer-back:hover { color: var(--accent); }
 
-/* ===== GLOBAL ANIMATIONS ===== */
+/*  GLOBAL ANIMATIONS  */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1246,7 +1246,7 @@ footer {
 
 
 
-/* ===== CERTIFICATE MODAL ===== */
+/*  CERTIFICATE MODAL  */
 .cert-card { cursor: pointer; }
 
 .cert-modal-overlay {
@@ -1462,7 +1462,7 @@ body.modal-open {
   overflow: hidden;
 }
 
-/* ===== RESPONSIVE ===== */
+/*  RESPONSIVE  */
 @media (max-width: 900px) {
   .hero-inner        { grid-template-columns: 1fr; text-align: center; }
   .hero-visual       { display: none; }
