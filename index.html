@@ -29,7 +29,7 @@
     <div class="nav-right">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <div class="theme-toggle-thumb" id="themeThumb">
-          <span id="themeIcon">🌙</span>
+          <span id="themeIcon"><svg width="15" height="15"><use href="#i-moon"/></svg> </span>
         </div>
       </button>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -231,7 +231,90 @@
 
       <div class="projects-grid" id="projectsGrid">
 
-        <!-- Project 1 -->
+        <!-- EVENTXED -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background:linear-gradient(135deg,#1a100a,#3a2010)">
+            <img src="eventxed.png" alt="EventXed">
+            <div class="project-overlay">
+              <a href="https://eventxed.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
+              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">EventXed Event Listing Website</div>
+            <p class="project-desc">
+              A responsive event listing website built with Javascript and CSS. The platform allows users to browse and search for local events, with integration for ticket purchases.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Javascript</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">Paystack</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://eventxed.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
+              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
+              <button class="btn-sm btn-sm-ghost">Details</button>
+            </div>
+          </div>
+        </div>   
+
+        <!-- AGROCHAIN -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-img" style="background:linear-gradient(135deg,#0a1a0f,#0d3320)">
+            <img src="agrochain.png" alt="AgroChain">
+            <div class="project-overlay">
+              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
+              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">AgroChain</div>
+            <p class="project-desc">
+              A blockchain-based supply chain management system for agriculture, designed to enhance transparency and traceability from farm to table. The project includes a Figma prototype of the user interface for tracking produce and verifying authenticity.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Blockchain</span>
+              <span class="project-tag">Sui</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
+              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
+              <button class="btn-sm btn-sm-ghost">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHOENIX APP -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1060)">
+            <img src="phoenixapp1.png" alt="Phoenix Travel App">
+            <div class="project-overlay">
+              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
+              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Mobile Travel Services App (UI/UX)</div>
+            <p class="project-desc">
+              A mobile app UI/UX design for a travel services platform, created using Figma. The design focuses on user-friendly navigation and an engaging interface to enhance the travel booking experience.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">UI/UX</span>
+              <span class="project-tag">Mobile Design</span>
+              <span class="project-tag">Design System</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
+              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
+              <button class="btn-sm btn-sm-ghost">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FARM FEEDER -->
         <div class="project-card reveal">
           <div class="project-img">
             <img src="farmfeeder.png" alt="Livestock Farm Feeding System">
@@ -260,12 +343,12 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- MY PORTFOLIO -->
         <div class="project-card reveal reveal-delay-1">
           <div class="project-img" style="background:linear-gradient(135deg,#0d1b2a,#1a3a5c)">
             <img src="myportfolio.png" alt="My portfolio">
             <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
+              <a href="https://david-udoh-portfolio.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
               <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
             </div>
           </div>
@@ -278,98 +361,15 @@
               <span class="project-tag">JavaScript</span> 
               <span class="project-tag">CSS</span>
               <span class="project-tag">HTML</span>
-            <!--<span class="project-tag">D3.js</span>-->
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
+              <a href="https://david-udoh-portfolio.vercel.app/" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
               <a href="https://github.com/XavierEDe/Portfolio.git" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
               <button class="btn-sm btn-sm-ghost" onclick="window.open('https://david-udoh-portfolio.vercel.app/', '_blank')">Details</button>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1060)">
-            <img src="phoenixapp1.png" alt="Phoenix Travel App">
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">Mobile Travel Services App UI/UX</div>
-            <p class="project-desc">
-              A mobile app UI/UX design for a travel services platform, created using Figma. The design focuses on user-friendly navigation and an engaging interface to enhance the travel booking experience.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Figma</span>
-              <span class="project-tag">UI/UX</span>
-              <span class="project-tag">Mobile Design</span>
-              <span class="project-tag">Design System</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card reveal reveal-delay-3">
-          <div class="project-img" style="background:linear-gradient(135deg,#0a1a0f,#0d3320)">
-            <img src="agrochain.png" alt="AgroChain">
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">AgroChain</div>
-            <p class="project-desc">
-              A blockchain-based supply chain management system for agriculture, designed to enhance transparency and traceability from farm to table. The project includes a Figma prototype of the user interface for tracking produce and verifying authenticity.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Figma</span>
-              <span class="project-tag">Blockchain</span>
-              <span class="project-tag">Sui</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card reveal reveal-delay-1">
-          <div class="project-img" style="background:linear-gradient(135deg,#1a100a,#3a2010)">
-            <img src="eventxed.png" alt="EventXed">
-            <div class="project-overlay">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">⌥ Code</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title">EventXed Event Listing Website</div>
-            <p class="project-desc">
-              A responsive event listing website built with Javascript and CSS. The platform allows users to browse and search for local events, with integration for ticket purchases.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Javascript</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">Paystack</span>
-            </div>
-            <div class="project-actions">
-              <a href="#" class="btn-sm btn-sm-primary" target="_blank">Live Demo</a>
-              <a href="#" class="btn-sm btn-sm-ghost"   target="_blank">GitHub</a>
-              <button class="btn-sm btn-sm-ghost">Details</button>
-            </div>
-          </div>
-        </div> 
 
         <!-- Project 6 
         <div class="project-card reveal reveal-delay-2">

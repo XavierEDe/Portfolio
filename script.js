@@ -1,14 +1,14 @@
 var html = document.documentElement;
 var savedTheme = localStorage.getItem('theme') || 'dark';
 html.setAttribute('data-theme', savedTheme);
-document.getElementById('themeIcon').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+document.getElementById('themeIcon').innerHTML = savedTheme === 'dark' ? '<svg width="15" height="15"><use href="#i-moon"/></svg>' : '<svg width="15" height="15"><use href="#i-sun"/></svg>';
 
 document.getElementById('themeToggle').addEventListener('click', function () {
   var current = html.getAttribute('data-theme');
   var next = current === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
-  document.getElementById('themeIcon').textContent = next === 'dark' ? '🌙' : '☀️';
+  document.getElementById('themeIcon').innerHTML = next === 'dark' ? '<svg width="15" height="15"><use href="#i-moon"/></svg>' : '<svg width="15" height="15"><use href="#i-sun"/></svg>';
 });
 
 // ======= NAVBAR SCROLL SHADOW =======
